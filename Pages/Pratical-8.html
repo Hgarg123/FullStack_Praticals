@@ -1,0 +1,459 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pratical-8</title>
+    <style>
+        * {
+            padding: 0px;
+            margin: 0px;
+        }
+
+        #container {
+
+            width: 100%;
+            margin: 10px 10px;
+            height: auto;
+
+
+        }
+
+        #container::after {
+            content: '';
+            display: block;
+            clear: both;
+        }
+
+        #header {
+            width: 100%;
+            height: 40px;
+            background-color: grey;
+            color: white;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 15px;
+            margin-bottom: 20px;
+            font-family: Arial, Helvetica, sans-serif;
+        }
+
+        ul {
+           
+            list-style: none;
+            
+
+        }
+
+        ul li {
+            display: inline-block;
+            font-size: 30px;
+            margin: auto 40px;
+            font-weight: bold;
+            margin: 20px
+
+        }
+
+        ul li a {
+            width: 100%;
+            text-align: center;
+            display: block;
+            padding: 10px 20px;
+            text-decoration: none;
+            color: black;
+            font-weight: bold;
+            text-transform: uppercase;
+        }
+
+        ul li a:hover {
+            background-color: orange;
+            color: white;
+        }
+
+        #banner {
+            width: 100%;
+            display: block; 
+             height: auto; 
+             display: flex;
+            align-items: center; 
+            justify-content: center;
+        
+    
+        }
+
+        #banner img {
+            width: 100%;
+            /* margin: 0 20px; */
+            position: relative;
+        }
+
+        #text {
+            position: absolute;
+            color: white;
+            font-size: 80px;
+            top: 130px;
+            left: 50px;
+            font-family: Georgia, 'Times New Roman', Times, serif;
+            
+        }
+        #section {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 10px;
+            font-size: 60px;
+        }
+
+        #circleContainer {
+            width: 100%;
+            height: auto;
+            margin-top: 10px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        #circleContainer::after {
+            content: '';
+            display: block;
+            clear: both;
+        }
+
+        #circle {
+            width: 250px;
+            height: 250px;
+            border-radius: 100%;
+            margin: 20px 40px;
+            /* background-color: goldenrod; */
+            float: left;
+
+        }
+
+        #circle img {
+            width: 100%;
+            height: 100%;
+            border-radius: 100%;
+        }
+
+
+        #content {
+            width: 100%;
+            margin-bottom: 30px;
+        }
+
+        #content::after {
+            content: '';
+            display: block;
+            clear: both;
+        }
+
+        #leftbar {
+            width: 50%;
+            height: 640px;
+            float: left;
+            background-color: gray;
+            font-family: 'Times New Roman', Times, serif;
+            overflow: hidden;
+
+
+        }
+
+        #leftbar p {
+            text-align: justify;
+            color: white;
+            font-size: 20px;
+            text-align: justify;
+            padding: 15px;
+
+        }
+
+        #leftbar h1 {
+            color: white;
+        }
+
+        #rightbar {
+            width: 48%;
+            height: 640px;
+            float: right;
+            margin-top: 5px;
+        }
+
+        #article-1 {
+            width: 100%;
+            height: 200px;
+            background-color: rgba(233, 96, 96, 0.767);
+            font-family: Arial, Helvetica, sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            color: white;
+            margin-bottom: 15px;
+
+        }
+
+        #article-1 img {
+            height: 100%;
+            width: 100%;
+            position: relative;
+        }
+
+        #project1 {
+            position: absolute;
+            color: black;
+            font-family: Arial, Helvetica, sans-serif;
+            font-size: 30px;
+            top: 1340px;
+
+        }
+
+        #article-2 {
+            width: 100%;
+            height: 200px;
+            background-color: rgba(233, 96, 96, 0.767);
+            font-family: Arial, Helvetica, sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            color: white;
+            margin-bottom: 15px;
+
+        }
+
+        #article-2 img {
+            height: 100%;
+            width: 100%;
+        }
+
+        #project2 {
+            position: absolute;
+            color: black;
+            font-family: Arial, Helvetica, sans-serif;
+            font-size: 30px;
+            top: 1550px;
+
+        }
+
+        #article-3 {
+            width: 100%;
+            height: 200px;
+            background-color: rgba(233, 96, 96, 0.767);
+            font-family: Arial, Helvetica, sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            color: white;
+            margin-bottom: 15px;
+
+        }
+
+        #article-3 img {
+            height: 100%;
+            width: 100%;
+        }
+
+        #project3 {
+            position: absolute;
+            color: black;
+            font-family: Arial, Helvetica, sans-serif;
+            font-size: 30px;
+            top: 1770px;
+
+        }
+
+        #boxContainer {
+            width: 100%;
+            height: auto;
+            margin-top: 20px;
+            margin-bottom: 20px;
+        }
+
+        #boxContainer::after {
+            content: '';
+            display: block;
+            clear: both;
+        }
+
+        #box {
+            width: 20%;
+            height: auto;
+            /* background-color: red; */
+            margin: 0px 20px;
+            float: left;
+            padding: 10px;
+            border: 2px solid grey;
+            border-radius: 10px;
+
+        }
+
+        #box img {
+            width: 100%;
+            height: 150px;
+            border-radius: 10px;
+            margin-bottom: 5px;
+        }
+
+        .button {
+            display: block;
+            background: orange;
+            text-align: center;
+            padding: 7px 0;
+            border-radius: 8px;
+            color: white;
+            text-decoration: none;
+            margin-top: 15px;
+            margin-bottom: 2px;
+        }
+
+        .button:hover {
+            /* color: blue; */
+            background: blue;
+        }
+
+        #box p {
+            margin: 8px 0;
+            text-align: justify;
+
+        }
+
+        #box h3 {
+            font-weight: bold;
+            text-align: center;
+        }
+
+        #footer {
+            width: 100%;
+            height: 100px;
+            background-color: rgba(218, 101, 202, 0.945);
+            font-size: 30px;
+            text-align: center;
+        }
+        #footer p{
+            margin-top: 20px;
+            margin-bottom: 15px;
+        }
+        #footer a{
+            text-decoration: none;
+            
+        }
+
+    </style>
+</head>
+
+<body>
+    <div id="container">
+        <div id="header">
+            <ul>
+                <li><a href="#">Home</a></li>
+                <li><a href="#about-us">About-us</a></li>
+                <li><a href="#team">Team</a></li>
+                <li><a href="#technologies">Technologies</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+        </div>
+        <div id="banner">
+            <img src="../Images/emile-perron-xrVDYZRGdw4-unsplash.jpg" alt="">
+            <div id="text">Pratical-8</div>
+        </div>
+        <h2 id="section"><a name="team">Team Members</a></h2>
+        <div id="circleContainer">
+            <div id="circle">
+                <img src="../Images/1.png" alt="">
+            </div>
+            <div id="circle">
+                <img src="../Images/2.png" alt="">
+            </div>
+            <div id="circle">
+                <img src="../Images/3.png" alt="">
+            </div>
+            <div id="circle">
+                <img src="../Images/9.png" alt="">
+            </div>
+        </div>
+        <h2 id="section"><a name="about-us">About Us</a></h2>
+        <div id="content">
+            <div id="leftbar">
+                <h1>About Projects</h1>
+                <br>
+                <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Illo cumque sapiente tenetur, pariatur
+                    corrupti nisi corporis fuga atque ab officiis reiciendis maiores optio delectus nemo obcaecati dolor
+                    perspiciatis sint itaque exercitationem reprehenderit nobis. Aperiam officia, nobis, nam laudantium
+                    laboriosam aliquid magni praesentium veniam voluptatem provident totam repudiandae adipisci
+                    reprehenderit nemo, aspernatur quidem molestiae illo amet odit eligendi itaque? Pariatur maxime
+                    dolorum necessitatibus veritatis. Blanditiis recusandae mollitia nostrum eveniet ducimus, hic,
+                    aspernatur a officiis deleniti cumque culpa tempora tenetur. Explicabo sit excepturi pariatur harum
+                    tempore dicta voluptatibus animi officia nihil quod, sequi repellendus fuga, aliquam blanditiis
+                    eaque. Placeat delectus maiores numquam voluptatibus tempora itaque hic repellat distinctio ut,
+                    ducimus nemo aut reiciendis minus libero adipisci fuga ipsam deleniti veniam cupiditate deserunt et.
+                    Fuga temporibus, natus, aperiam cupiditate, aut quo quidem distinctio libero aspernatur consectetur
+                    error. Beatae accusamus quae ducimus rerum odit tempore facilis, doloremque repudiandae quasi?
+                    Aspernatur omnis reprehenderit necessitatibus dolore magnam, odio eaque esse, sit repellat quas ipsa
+                    cumque amet explicabo veritatis praesentium placeat molestias rerum cupiditate blanditiis ad
+                    assumenda porro. Mollitia magni magnam, quasi nihil illum earum, natus vero inventore expedita
+                    fugiat quos et sed molestiae labore praesentium. Nihil, nisi at accusantium aperiam quaerat illum
+                    magni nostrum numquam, neque mollitia dolore inventore ipsa delectus obcaecati repudiandae, id vel
+                    ex quisquam commodi suscipit iusto. Porro perferendis maiores consectetur odit unde autem fuga
+                    doloremque quam! Debitis autem eligendi nihil mollitia minus numquam necessitatibus quaerat maiores,
+                    illo doloremque vero tempore praesentium exercitationem ab eius ut dicta odio.</p>
+            </div>
+            <div id="rightbar">
+                <div id="article-1">
+                    <img src="../Images/p3.jpg" alt="">
+                    <div id="project1">
+                        <h3>PROJECT-1</h3>
+                    </div>
+                </div>
+                <div id="article-2">
+                    <img src="../Images/p2.jpeg" alt="">
+                    <div id="project2">
+                        <h3>PROJECT-2</h3>
+                    </div>
+                </div>
+                <div id="article-3">
+                    <img src="../Images/p1.jpg" alt="">
+                    <div id="project3">
+                        <h3>PROJECT-3</h3>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <h2 id="section"><a name="technologies"></a>Technologies Used</h2>
+        <div id="boxContainer">
+            <div id="box">
+                <img src="../Images/html.jpg" alt="">
+                <h3>Introduction to HTML</h3>
+                <p>HTML is the standard markup language for documents designed to be displayed in a web browser. It can
+                    be assisted by technologies such as Cascading Style Sheets and JavaScript </p>
+                <a class='button' href="Pratical-5_html.html" target="_blank">Read More</a>
+            </div>
+            <div id="box">
+                <img src="../Images/css.png" alt="CSS">
+                <h3>Introduction to CSS</h3>
+                <p>Cascading Style Sheets is a style sheet language used for describing the presentation of a document
+                    written in a markup language like Hyper text markup language(HTML)</p>
+                <a class='button' href="Pratical-5_css.html" target="_blank">Read More</a>
+            </div>
+            <div id="box">
+                <img src="../Images/js.png" alt="JS">
+                <h3>Introduction to Javascript</h3>
+                <p>JavaScript is a cross-platform, object-oriented scripting language used to make webpages interactive
+                    (e.g., having complex animations, clickable buttons, etc).</p>
+                <a class='button' href="Pratical-5_js.html" target="_blank">Read More</a>
+            </div>
+            <div id="box">
+                <img src="../Images/bootStrap.png" alt="Bootstrap">
+                <h3>Introduction to Bootstrap</h3>
+                <p>Bootstrap is a free and open-source CSS framework directed at responsive, mobile-first front-end web
+                    development. It is the 7th most starred project on GitHub.</p>
+                <a class='button' href="Practical-5_boot.html" target="_blank">Read More</a>
+            </div>
+        </div>
+        <h2 id="section"><a name="contact"></a>Contact</h2>
+        <div id="footer">
+            <p>Website Template For Practical-8 &copy <a href="https://www.beta-labs.in/" target="_blank">Beta-Labs</a></p>
+            <a href="#top">Back to Top</a>
+        </div>
+    </div>
+</body>
+
+</html>
