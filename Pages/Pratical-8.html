@@ -14,11 +14,16 @@
         #container {
 
             width: 100%;
-            margin: 10px 10px;
-            height: auto;
+            margin: auto;
 
 
         }
+
+        html {
+            scroll-padding-top: 90px;
+            scroll-behavior: smooth;
+        }
+
 
         #container::after {
             content: '';
@@ -28,22 +33,21 @@
 
         #header {
             width: 100%;
-            height: 40px;
+            height: 50px;
             background-color: grey;
             color: white;
             display: flex;
             align-items: center;
             justify-content: center;
             padding: 15px;
-            margin-bottom: 20px;
+            margin-bottom: 40px;
             font-family: Arial, Helvetica, sans-serif;
+            position: fixed;
+            top: 0;
         }
 
         ul {
-           
             list-style: none;
-            
-
         }
 
         ul li {
@@ -51,8 +55,7 @@
             font-size: 30px;
             margin: auto 40px;
             font-weight: bold;
-            margin: 20px
-
+            margin: 20px;
         }
 
         ul li a {
@@ -72,31 +75,29 @@
         }
 
         #banner {
+            margin-top: 50px;
             width: 100%;
-            display: block; 
-             height: auto; 
-             display: flex;
-            align-items: center; 
-            justify-content: center;
-        
-    
+            display: flex;
+            height: 680px;
+            display: flex;
+            font-size: 50px;
+            margin-bottom: 20px;
+
         }
 
-        #banner img {
-            width: 100%;
-            /* margin: 0 20px; */
-            position: relative;
+        #banner {
+            /* margin-top: 50px; */
+            background-image: url(../Images/emile-perron-xrVDYZRGdw4-unsplash.jpg);
+            background-size: cover;
+            background-position: center;
         }
 
-        #text {
-            position: absolute;
+        #banner h1 {
+            margin: 20px 20px;
             color: white;
-            font-size: 80px;
-            top: 130px;
-            left: 50px;
-            font-family: Georgia, 'Times New Roman', Times, serif;
-            
+            /* font-family: Georgia, 'Times New Roman', Times, serif; */
         }
+
         #section {
             display: flex;
             align-items: center;
@@ -179,86 +180,34 @@
             margin-top: 5px;
         }
 
-        #article-1 {
-            width: 100%;
-            height: 200px;
-            background-color: rgba(233, 96, 96, 0.767);
-            font-family: Arial, Helvetica, sans-serif;
+        .artical {
+            height: 31%;
+            margin-bottom: 20px;
+            background-color: chocolate;
             display: flex;
             justify-content: center;
-            align-items: center;
-            color: white;
-            margin-bottom: 15px;
-
-        }
-
-        #article-1 img {
-            height: 100%;
-            width: 100%;
-            position: relative;
-        }
-
-        #project1 {
-            position: absolute;
+            font-size: 20px;
+            font-family: Arial, Helvetica, sans-serif;
             color: black;
-            font-family: Arial, Helvetica, sans-serif;
-            font-size: 30px;
-            top: 1340px;
-
+            overflow: hidden;
         }
 
-        #article-2 {
-            width: 100%;
-            height: 200px;
-            background-color: rgba(233, 96, 96, 0.767);
-            font-family: Arial, Helvetica, sans-serif;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            color: white;
-            margin-bottom: 15px;
-
+        #p1 {
+            background-image: url(../Images/p1.jpg);
+            background-size: cover;
+            background-repeat: no-repeat;
         }
 
-        #article-2 img {
-            height: 100%;
-            width: 100%;
+        #p2 {
+            background-image: url(../Images/p2.jpeg);
+            background-size: cover;
+            background-repeat: no-repeat;
         }
 
-        #project2 {
-            position: absolute;
-            color: black;
-            font-family: Arial, Helvetica, sans-serif;
-            font-size: 30px;
-            top: 1550px;
-
-        }
-
-        #article-3 {
-            width: 100%;
-            height: 200px;
-            background-color: rgba(233, 96, 96, 0.767);
-            font-family: Arial, Helvetica, sans-serif;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            color: white;
-            margin-bottom: 15px;
-
-        }
-
-        #article-3 img {
-            height: 100%;
-            width: 100%;
-        }
-
-        #project3 {
-            position: absolute;
-            color: black;
-            font-family: Arial, Helvetica, sans-serif;
-            font-size: 30px;
-            top: 1770px;
-
+        #p3 {
+            background-image: url(../Images/p3.jpg);
+            background-size: cover;
+            background-repeat: no-repeat;
         }
 
         #boxContainer {
@@ -328,15 +277,16 @@
             font-size: 30px;
             text-align: center;
         }
-        #footer p{
+
+        #footer p {
             margin-top: 20px;
             margin-bottom: 15px;
         }
-        #footer a{
-            text-decoration: none;
-            
-        }
 
+        #footer a {
+            text-decoration: none;
+
+        }
     </style>
 </head>
 
@@ -352,8 +302,7 @@
             </ul>
         </div>
         <div id="banner">
-            <img src="../Images/emile-perron-xrVDYZRGdw4-unsplash.jpg" alt="">
-            <div id="text">Pratical-8</div>
+            <h1>Project-8</h1>
         </div>
         <h2 id="section"><a name="team">Team Members</a></h2>
         <div id="circleContainer">
@@ -397,62 +346,56 @@
                     illo doloremque vero tempore praesentium exercitationem ab eius ut dicta odio.</p>
             </div>
             <div id="rightbar">
-                <div id="article-1">
-                    <img src="../Images/p3.jpg" alt="">
-                    <div id="project1">
-                        <h3>PROJECT-1</h3>
-                    </div>
+                <div class="artical" id="p1">
+                    <h3>PROJECT-1</h3>
                 </div>
-                <div id="article-2">
-                    <img src="../Images/p2.jpeg" alt="">
-                    <div id="project2">
-                        <h3>PROJECT-2</h3>
-                    </div>
+                <div class="artical" id="p2">
+                    <h3>PROJECT-2</h3>
                 </div>
-                <div id="article-3">
-                    <img src="../Images/p1.jpg" alt="">
-                    <div id="project3">
-                        <h3>PROJECT-3</h3>
-                    </div>
+                <div class="artical" id="p3">
+                    <h3>PROJECT-3</h3>
                 </div>
             </div>
         </div>
-        <h2 id="section"><a name="technologies"></a>Technologies Used</h2>
-        <div id="boxContainer">
-            <div id="box">
-                <img src="../Images/html.jpg" alt="">
-                <h3>Introduction to HTML</h3>
-                <p>HTML is the standard markup language for documents designed to be displayed in a web browser. It can
-                    be assisted by technologies such as Cascading Style Sheets and JavaScript </p>
-                <a class='button' href="Pratical-5_html.html" target="_blank">Read More</a>
-            </div>
-            <div id="box">
-                <img src="../Images/css.png" alt="CSS">
-                <h3>Introduction to CSS</h3>
-                <p>Cascading Style Sheets is a style sheet language used for describing the presentation of a document
-                    written in a markup language like Hyper text markup language(HTML)</p>
-                <a class='button' href="Pratical-5_css.html" target="_blank">Read More</a>
-            </div>
-            <div id="box">
-                <img src="../Images/js.png" alt="JS">
-                <h3>Introduction to Javascript</h3>
-                <p>JavaScript is a cross-platform, object-oriented scripting language used to make webpages interactive
-                    (e.g., having complex animations, clickable buttons, etc).</p>
-                <a class='button' href="Pratical-5_js.html" target="_blank">Read More</a>
-            </div>
-            <div id="box">
-                <img src="../Images/bootStrap.png" alt="Bootstrap">
-                <h3>Introduction to Bootstrap</h3>
-                <p>Bootstrap is a free and open-source CSS framework directed at responsive, mobile-first front-end web
-                    development. It is the 7th most starred project on GitHub.</p>
-                <a class='button' href="Practical-5_boot.html" target="_blank">Read More</a>
-            </div>
+    </div>
+    <br><br>
+    <h2 id="section"><a name="technologies"></a>Technologies Used</h2>
+    <div id="boxContainer">
+        <div id="box">
+            <img src="../Images/html.jpg" alt="">
+            <h3>Introduction to HTML</h3>
+            <p>HTML is the standard markup language for documents designed to be displayed in a web browser. It can
+                be assisted by technologies such as Cascading Style Sheets and JavaScript </p>
+            <a class='button' href="Pratical-5_html.html" target="_blank">Read More</a>
         </div>
-        <h2 id="section"><a name="contact"></a>Contact</h2>
-        <div id="footer">
-            <p>Website Template For Practical-8 &copy <a href="https://www.beta-labs.in/" target="_blank">Beta-Labs</a></p>
-            <a href="#top">Back to Top</a>
+        <div id="box">
+            <img src="../Images/css.png" alt="CSS">
+            <h3>Introduction to CSS</h3>
+            <p>Cascading Style Sheets is a style sheet language used for describing the presentation of a document
+                written in a markup language like Hyper text markup language(HTML)</p>
+            <a class='button' href="Pratical-5_css.html" target="_blank">Read More</a>
         </div>
+        <div id="box">
+            <img src="../Images/js.png" alt="JS">
+            <h3>Introduction to Javascript</h3>
+            <p>JavaScript is a cross-platform, object-oriented scripting language used to make webpages interactive
+                (e.g., having complex animations, clickable buttons, etc).</p>
+            <a class='button' href="Pratical-5_js.html" target="_blank">Read More</a>
+        </div>
+        <div id="box">
+            <img src="../Images/bootStrap.png" alt="Bootstrap">
+            <h3>Introduction to Bootstrap</h3>
+            <p>Bootstrap is a free and open-source CSS framework directed at responsive, mobile-first front-end web
+                development. It is the 7th most starred project on GitHub.</p>
+            <a class='button' href="Practical-5_boot.html" target="_blank">Read More</a>
+        </div>
+    </div>
+    <h2 id="section"><a name="contact"></a>Contact</h2>
+    <div id="footer">
+        <p>Website Template For Practical-8 &copy <a href="https://www.beta-labs.in/" target="_blank">Beta-Labs</a>
+        </p>
+        <a href="#top">Back to Top</a>
+    </div>
     </div>
 </body>
 
