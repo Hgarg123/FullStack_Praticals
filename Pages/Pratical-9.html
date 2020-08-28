@@ -1,0 +1,1136 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pratical-9</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+            scroll-padding-top: 70px;
+        }
+
+        #container {
+            width: 100%;
+            max-width: 1200px;
+            margin: auto;
+        }
+
+        #header {
+            width: 100%;
+            height: 70px;
+            background-color: grey;
+            max-width: 1200px;
+            position: fixed;
+            top: 0;
+        }
+
+        .menu {
+            list-style: none;
+            float: right;
+            padding: 0 20px;
+        }
+
+        .menu li {
+            display: inline-block;
+            line-height: 70px;
+        }
+
+        .menu li a {
+            transition: .5s;
+            display: block;
+            text-decoration: none;
+            text-transform: uppercase;
+            color: white;
+            padding: 0 20px;
+            font-size: 20px;
+
+        }
+
+        .menu li a:hover {
+            background-color: skyblue;
+            color: black;
+        }
+
+        .show-btn,
+        .hide-btn,
+        #chk {
+            font-size: 30px;
+            line-height: 70px;
+            color: white;
+            float: right;
+            padding-right: 20px;
+            display: none;
+        }
+
+        #banner {
+            width: 100%;
+            height: 680px;
+            margin-top: 90px;
+            display: flex;
+            font-size: 40px;
+            color: white;
+        }
+
+        #banner {
+            background-image: url(../Images/emile-perron-xrVDYZRGdw4-unsplash.jpg);
+            background-size: cover;
+            background-position: center;
+        }
+
+        #banner h2 {
+            margin: 20px 20px;
+            color: #fff;
+        }
+
+        #circle-container {
+            width: 100%;
+            margin: 15px auto;
+        }
+
+        #circle-container::after {
+            content: '';
+            display: block;
+            clear: both;
+        }
+
+        .circle img {
+            height: 250px;
+            width: 250px;
+            border-radius: 100%;
+            float: left;
+            margin-left: 40px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-size: 30px;
+        }
+
+        #sec2-container::after {
+            content: '';
+            display: block;
+            clear: both;
+        }
+
+        #left-side {
+            width: 50%;
+            height: 550px;
+            background-color: grey;
+            float: left;
+            color: white;
+            /* margin-bottom: 20px; */
+            overflow: hidden;
+        }
+
+        #left-p>h2 {
+            text-align: left;
+            margin-bottom: 15px;
+        }
+
+        #left-p>p {
+            text-align: justify;
+            color: white;
+            font-size: 20px;
+            padding: 10px;
+            line-height: 28px;
+        }
+
+        #right-side {
+            width: 48%;
+            height: 550px;
+            float: right;
+        }
+
+        .article {
+            height: 31%;
+            margin-bottom: 20px;
+            display: flex;
+            justify-content: center;
+            font-size: 20px;
+            font-family: Arial, Helvetica, sans-serif;
+            color: black;
+        }
+
+        #p1 {
+            background-image: url(../Images/p1.jpg);
+            background-size: cover;
+            background-repeat: no-repeat;
+        }
+
+        #p2 {
+            background-image: url(../Images/p3.jpg);
+            background-size: cover;
+            background-repeat: no-repeat;
+        }
+
+        #p3 {
+            background-image: url(../Images/p2.jpeg);
+            background-size: cover;
+            background-repeat: no-repeat;
+        }
+
+        #grid-container {
+            width: 100%;
+            margin: 15px auto;
+        }
+
+        #grid-container::after {
+            content: '';
+            display: block;
+            clear: both;
+        }
+
+        .grid {
+            width: 23%;
+            float: left;
+            margin-left: 15px;
+            padding: 7px;
+            box-shadow: black;
+            border: 2px solid black;
+            background-color: lightgray;
+
+        }
+
+        .grid img {
+            width: 100%;
+            margin-bottom: 10px;
+            height: 150px;
+            border-radius: 8px;
+        }
+
+        .grid h3 {
+            text-align: center;
+            color: black;
+            font-family: Arial, Helvetica, sans-serif;
+            margin-bottom: 10px;
+        }
+
+        .grid p {
+            width: 100%;
+            text-align: justify;
+            padding: 5px;
+            line-height: 20px;
+        }
+
+        h1 {
+            text-align: center;
+            margin-top: 25px;
+            margin-bottom: 25px;
+            font-size: 40px;
+        }
+
+        .button {
+            display: block;
+            background: orange;
+            text-align: center;
+            padding: 7px 0;
+            border-radius: 8px;
+            color: white;
+            text-decoration: none;
+            margin-top: 15px;
+            margin-bottom: 2px;
+        }
+
+        .button:hover {
+            /* color: blue; */
+            background: blue;
+        }
+
+        #footer {
+            width: 100%;
+            height: 100px;
+            background-color: rgba(218, 101, 202, 0.945);
+            font-size: 20px;
+            text-align: center;
+        }
+
+        #footer p {
+            line-height: 60px;
+        }
+
+        #footer a {
+            text-decoration: none;
+        }
+
+        @media(max-width: 1199px) and (min-width: 801px) {
+            * {
+                margin: 0;
+                padding: 0;
+                box-sizing: border-box;
+            }
+
+            html {
+                scroll-behavior: smooth;
+                scroll-padding-top: 70px;
+            }
+
+            #container {
+                width: 100%;
+                max-width: 1200px;
+                margin: auto;
+            }
+
+            #header {
+                width: 100%;
+                height: 70px;
+                background-color: grey;
+                max-width: 1200px;
+                position: fixed;
+                top: 0;
+            }
+
+            .menu {
+                list-style: none;
+                float: right;
+                padding: 0 20px;
+            }
+
+            .menu li {
+                display: inline-block;
+                line-height: 70px;
+            }
+
+            .menu li a {
+                transition: .5s;
+                display: block;
+                text-decoration: none;
+                text-transform: uppercase;
+                color: white;
+                padding: 0 20px;
+                font-size: 20px;
+
+            }
+
+            .menu li a:hover {
+                background-color: skyblue;
+                color: black;
+            }
+
+            .show-btn,
+            .hide-btn,
+            #chk {
+                font-size: 30px;
+                line-height: 70px;
+                color: white;
+                float: right;
+                padding-right: 20px;
+                display: none;
+            }
+
+            #banner {
+                width: 100%;
+                height: 680px;
+                margin-top: 90px;
+                display: flex;
+                font-size: 40px;
+                color: white;
+            }
+
+            #banner {
+                background-image: url(../Images/emile-perron-xrVDYZRGdw4-unsplash.jpg);
+                background-size: cover;
+                background-position: center;
+            }
+
+            #banner h2 {
+                margin: 20px 20px;
+                color: #fff;
+            }
+
+            #circle-container {
+                width: 100%;
+
+            }
+
+            #circle-container::after {
+                content: '';
+                display: block;
+                clear: both;
+            }
+
+            .circle img {
+                height: 250px;
+                width: 250px;
+                border-radius: 100%;
+                float: left;
+                margin-left: 15%;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                font-size: 30px;
+                margin-bottom: 15px;
+            }
+
+            #sec2-container::after {
+                content: '';
+                display: block;
+                clear: both;
+            }
+
+            #left-side {
+                width: 50%;
+                height: 550px;
+                background-color: grey;
+                float: left;
+                color: white;
+                /* margin-bottom: 20px; */
+                overflow: hidden;
+            }
+
+            #left-p>h2 {
+                text-align: left;
+                margin-bottom: 15px;
+            }
+
+            #left-p>p {
+                text-align: justify;
+                color: white;
+                font-size: 20px;
+                padding: 10px;
+                line-height: 28px;
+            }
+
+            #right-side {
+                width: 48%;
+                height: 550px;
+                float: right;
+            }
+
+            .article {
+                height: 31%;
+                margin-bottom: 20px;
+                display: flex;
+                justify-content: center;
+                font-size: 20px;
+                font-family: Arial, Helvetica, sans-serif;
+                color: black;
+            }
+
+            #p1 {
+                background-image: url(../Images/p1.jpg);
+                background-size: cover;
+                background-repeat: no-repeat;
+            }
+
+            #p2 {
+                background-image: url(../Images/p3.jpg);
+                background-size: cover;
+                background-repeat: no-repeat;
+            }
+
+            #p3 {
+                background-image: url(../Images/p2.jpeg);
+                background-size: cover;
+                background-repeat: no-repeat;
+            }
+
+            #grid-container {
+                width: 100%;
+                margin: 15px auto;
+            }
+
+            #grid-container::after {
+                content: '';
+                display: block;
+                clear: both;
+            }
+
+            .grid {
+                width: 40%;
+                float: left;
+                margin-left: 40px;
+                padding: 7px;
+                box-shadow: black;
+                border: 2px solid black;
+                background-color: lightgray;
+                margin-bottom: 15px;
+                max-height: 370px;
+
+            }
+
+            .grid img {
+                width: 100%;
+                margin-bottom: 10px;
+                height: 150px;
+                border-radius: 8px;
+            }
+
+            .grid h3 {
+                text-align: center;
+                color: black;
+                font-family: Arial, Helvetica, sans-serif;
+                margin-bottom: 10px;
+            }
+
+            .grid p {
+                width: 100%;
+                text-align: justify;
+                padding: 5px;
+                line-height: 20px;
+            }
+
+            h1 {
+                text-align: center;
+                margin-top: 25px;
+                margin-bottom: 25px;
+                font-size: 40px;
+            }
+
+            .button {
+                display: block;
+                background: orange;
+                text-align: center;
+                padding: 7px 0;
+                border-radius: 8px;
+                color: white;
+                text-decoration: none;
+                margin-top: 15px;
+                margin-bottom: 2px;
+            }
+
+            .button:hover {
+                /* color: blue; */
+                background: blue;
+            }
+
+            #footer {
+                width: 100%;
+                height: 100px;
+                background-color: rgba(218, 101, 202, 0.945);
+                font-size: 20px;
+                text-align: center;
+            }
+
+            #footer p {
+                line-height: 60px;
+            }
+
+            #footer a {
+                text-decoration: none;
+            }
+        }
+
+        @media(max-width: 800px) and (min-width: 626px) {
+            #header {
+                width: 100%;
+                height: 70px;
+                background-color: grey;
+                max-width: 1200px;
+                position: fixed;
+                top: 0;
+            }
+
+            .show-btn {
+                display: block;
+            }
+
+            .menu {
+                position: fixed;
+                top: 0;
+                right: -100%;
+                width: 100%;
+                background-color: #333;
+                text-align: center;
+                padding: 80px 0px;
+                line-height: normal;
+                transition: 0.7s;
+            }
+
+            .menu li {
+                display: block;
+
+            }
+
+            .menu li a {
+                display: block;
+
+            }
+
+            #chk:checked~.menu {
+                right: 0;
+            }
+
+            .hide-btn {
+                display: block;
+                position: absolute;
+                right: 20px;
+                top: 10px;
+            }
+
+
+            #banner {
+                width: 100%;
+                height: 680px;
+                margin-top: 90px;
+                display: flex;
+                font-size: 40px;
+                color: white;
+            }
+
+            #banner {
+                background-image: url(../Images/emile-perron-xrVDYZRGdw4-unsplash.jpg);
+                background-size: cover;
+                background-position: center;
+            }
+
+            #banner h2 {
+                margin: 20px 20px;
+                color: #fff;
+            }
+
+            #circle-container {
+                width: 100%;
+
+            }
+
+            #circle-container::after {
+                content: '';
+                display: block;
+                clear: both;
+            }
+
+            .circle img {
+                height: 250px;
+                width: 250px;
+                border-radius: 100%;
+                float: left;
+                margin-left: 10%;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                font-size: 30px;
+                margin-bottom: 15px;
+            }
+
+            #sec2-container::after {
+                content: '';
+                display: block;
+                clear: both;
+            }
+
+            #left-side {
+                width: 100%;
+                height: 250px;
+                background-color: grey;
+                /* float: left; */
+                color: white;
+                margin-bottom: 20px;
+                overflow: hidden;
+            }
+
+            #left-p>h2 {
+                text-align: left;
+                margin-bottom: 15px;
+            }
+
+            #left-p>p {
+                text-align: justify;
+                color: white;
+                font-size: 20px;
+                padding: 10px;
+                line-height: 28px;
+
+            }
+
+            #right-side {
+                width: 100%;
+                height: 550px;
+                /* float: right; */
+            }
+
+            .article {
+                height: 31%;
+                margin-bottom: 20px;
+                display: flex;
+                justify-content: center;
+                font-size: 20px;
+                font-family: Arial, Helvetica, sans-serif;
+                color: black;
+            }
+
+            #p1 {
+                background-image: url(../Images/p1.jpg);
+                background-size: cover;
+                background-repeat: no-repeat;
+            }
+
+            #p2 {
+                background-image: url(../Images/p3.jpg);
+                background-size: cover;
+                background-repeat: no-repeat;
+            }
+
+            #p3 {
+                background-image: url(../Images/p2.jpeg);
+                background-size: cover;
+                background-repeat: no-repeat;
+            }
+
+            #grid-container {
+                width: 100%;
+                margin: 15px auto;
+            }
+
+            #grid-container::after {
+                content: '';
+                display: block;
+                clear: both;
+            }
+
+            .grid {
+                width: 38%;
+                float: left;
+                margin-left: 35px;
+                padding: 7px;
+                box-shadow: black;
+                border: 2px solid black;
+                background-color: lightgray;
+                margin-bottom: 15px;
+                /* max-height: 370px; */
+
+            }
+
+            .grid img {
+                width: 100%;
+                margin-bottom: 10px;
+                height: 150px;
+                border-radius: 8px;
+            }
+
+            .grid h3 {
+                text-align: center;
+                color: black;
+                font-family: Arial, Helvetica, sans-serif;
+                margin-bottom: 10px;
+            }
+
+            .grid p {
+                width: 100%;
+                text-align: justify;
+                padding: 5px;
+                line-height: 20px;
+            }
+
+            h1 {
+                text-align: center;
+                margin-top: 25px;
+                margin-bottom: 25px;
+                font-size: 40px;
+            }
+
+            .button {
+                display: block;
+                background: orange;
+                text-align: center;
+                padding: 7px 0;
+                border-radius: 8px;
+                color: white;
+                text-decoration: none;
+                margin-top: 15px;
+                margin-bottom: 2px;
+            }
+
+            .button:hover {
+                /* color: blue; */
+                background: blue;
+            }
+
+            #footer {
+                width: 100%;
+                height: 100px;
+                background-color: rgba(218, 101, 202, 0.945);
+                font-size: 20px;
+                text-align: center;
+            }
+
+            #footer p {
+                line-height: 60px;
+            }
+
+            #footer a {
+                text-decoration: none;
+            }
+        }
+
+        @media(max-width: 625px) {
+            #container {
+                min-width: 320px;
+            }
+
+            #header {
+                width: 100%;
+                height: 70px;
+                background-color: grey;
+                max-width: 1200px;
+                position: fixed;
+                top: 0;
+            }
+
+            .show-btn {
+                display: block;
+            }
+
+            .menu {
+                position: fixed;
+                top: 0;
+                right: -100%;
+                width: 100%;
+                background-color: #333;
+                text-align: center;
+                padding: 80px 0px;
+                line-height: normal;
+                transition: 0.7s;
+            }
+
+            .menu li {
+                display: block;
+
+            }
+
+            .menu li a {
+                display: block;
+
+            }
+
+            #chk:checked~.menu {
+                right: 0;
+            }
+
+            .hide-btn {
+                display: block;
+                position: absolute;
+                right: 20px;
+                top: 10px;
+            }
+
+
+            #banner {
+                width: 100%;
+                height: 250px;
+                /* min-width: 350px; */
+                margin-top: 90px;
+                display: flex;
+                font-size: 40px;
+                color: white;
+            }
+
+            #banner {
+                background-image: url(../Images/emile-perron-xrVDYZRGdw4-unsplash.jpg);
+                background-size: cover;
+                background-position: center;
+            }
+
+            #banner h2 {
+                margin: 20px 20px;
+                color: #fff;
+                font-size: 25px;
+            }
+
+            #circle-container {
+                width: 90%;
+
+            }
+
+            #circle-container::after {
+                content: '';
+                display: block;
+                clear: both;
+            }
+
+            .circle img {
+                height: 70%;
+                width: 70%;
+                border-radius: 100%;
+                /* float: left; */
+                margin-left: 10%;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                font-size: 30px;
+                margin-bottom: 15px;
+            }
+
+            #sec2-container::after {
+                content: '';
+                display: block;
+                clear: both;
+            }
+
+            #left-side {
+                width: 100%;
+                height: 200px;
+                background-color: grey;
+                /* float: left; */
+                color: white;
+                margin-bottom: 20px;
+                overflow: hidden;
+            }
+
+            #left-p>h2 {
+                text-align: left;
+                margin-bottom: 15px;
+            }
+
+            #left-p>p {
+                text-align: justify;
+                color: white;
+                font-size: 20px;
+                padding: 10px;
+                line-height: 28px;
+
+            }
+
+            #right-side {
+                width: 100%;
+                height: 550px;
+                /* float: right; */
+            }
+
+            .article {
+                height: 31%;
+                margin-bottom: 20px;
+                display: flex;
+                justify-content: center;
+                font-size: 20px;
+                font-family: Arial, Helvetica, sans-serif;
+                color: black;
+            }
+
+            #p1 {
+                background-image: url(../Images/p1.jpg);
+                background-size: cover;
+                background-repeat: no-repeat;
+            }
+
+            #p2 {
+                background-image: url(../Images/p3.jpg);
+                background-size: cover;
+                background-repeat: no-repeat;
+            }
+
+            #p3 {
+                background-image: url(../Images/p2.jpeg);
+                background-size: cover;
+                background-repeat: no-repeat;
+            }
+
+            #grid-container {
+                width: 100%;
+                margin: 15px auto;
+            }
+
+            #grid-container::after {
+                content: '';
+                display: block;
+                clear: both;
+            }
+
+            .grid {
+                width: 90%;
+                margin: 0 20px;
+                padding: 7px;
+                box-shadow: black;
+                border: 2px solid black;
+                background-color: lightgray;
+                margin-bottom: 15px;
+                max-height: 500px;
+               
+            }
+
+            .grid img {
+                width: 100%;
+                margin-bottom: 10px;
+                height: 150px;
+                border-radius: 8px;
+            }
+
+            .grid h3 {
+                text-align: center;
+                color: black;
+                font-family: Arial, Helvetica, sans-serif;
+                margin-bottom: 10px;
+            }
+
+            .grid p {
+                width: 100%;
+                text-align: justify;
+                padding: 5px;
+                line-height: 20px;
+            }
+
+            h1 {
+                text-align: center;
+                margin-top: 25px;
+                margin-bottom: 25px;
+                font-size: 40px;
+            }
+
+            .button {
+                display: block;
+                background: orange;
+                text-align: center;
+                padding: 7px 0;
+                border-radius: 8px;
+                color: white;
+                text-decoration: none;
+                margin-top: 15px;
+                margin-bottom: 2px;
+            }
+
+            .button:hover {
+                /* color: blue; */
+                background: blue;
+            }
+
+            #footer {
+                width: 100%;
+                height: 100px;
+                background-color: rgba(218, 101, 202, 0.945);
+                font-size: 20px;
+                text-align: center;
+            }
+
+            #footer p {
+                line-height: 60px;
+            }
+
+            #footer a {
+                text-decoration: none;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <div id="container">
+        <div id="header">
+            <input type="checkbox" id="chk">
+            <label for="chk" class="show-btn">
+                <i class="fa fa-bars"></i>
+            </label>
+            <div class="menu">
+                <ul>
+                    <li><a href="#Top">Home</a></li>
+                    <li><a href="#About">About</a></li>
+                    <li><a href="#Team">Team</a></li>
+                    <li><a href="#Technologies">Technologies</a></li>
+                    <li><a href="#Contact">Contact</a></li>
+                    <label for="chk" class="hide-btn">
+                        <i class="fa fa-times"></i>
+                    </label>
+                </ul>
+            </div>
+        </div>
+        <a name="top"></a>
+        <div id="banner">
+            <h2>Pratical-9</h1>
+        </div>
+        <div id="circle-container">
+            <a name="Team"></a>
+            <h1>Team Members</h1>
+            <div class="circle">
+                <img src="../Images/1.png" alt="">
+            </div>
+            <div class="circle">
+                <img src="../Images/2.png" alt="">
+            </div>
+            <div class="circle">
+                <img src="../Images/3.png" alt="">
+            </div>
+            <div class="circle">
+                <img src="../Images/9.png" alt="">
+            </div>
+        </div>
+        <div id="sec2-container">
+            <a name="About"></a>
+            <h1>About Us</h1>
+            <div id="left-side">
+                <div class="left-content">
+                    <div id="left-p">
+                        <h2>About Projects</h2>
+                        <p> temporibus similique sit tenetur quasi exercitationem! Repellat
+                            obcaecati quibusdam iste explicabo laborum veritatis velit
+                            accusantium animi dolorum nemo ut quam, quo cum in suscipit
+                            fugiat minima corrupti voluptates tempora alias aspernatur esse
+                            dolore iure? Libero iste quo nam sequi nulla, minima architecto
+                            est cum expedita omnis enim culpa reiciendis nesciunt quod
+                            deserunt, nostrum corporis tempore impedit veritatis ut
+                            perspiciatis rerum. Amet, harum pariatur. Quo dolorum
+                            necessitatibus eos beatae eveniet, earum cum blanditiis,
+                            accusamus vitae, nisi voluptas dignissimos modi quibusdam aut
+                            veniam deserunt accusantium possimus atque? Distinctio voluptas
+                            nemo, fuga laboriosam perspiciatis eum debitis nesciunt quidem
+                            iure ratione! Eaque ea eum maxime temporibus dolor nostrum, iure
+                            enim, vero in atque quod animi! Mollitia alias magnam nisi
+                            suscipit ab ducimus dolores provident. Distinctio veritatis
+                            quaerat explicabo fuga neque culpa facere suscipit vel, totam
+                            quasi! Lorem ipsum dolor sit amet consectetur adipisicing elit. Nobis blanditiis, eos sunt
+                            libero amet itaque ab! Delectus amet quaerat possimus doloribus obcaecati? Esse, quasi quo
+                            pariatur distinctio velit corrupti animi.</p>
+                    </div>
+                </div>
+            </div>
+            <div id="right-side">
+                <div class="article" id="p1">
+                    <h2>Project-1</h2>
+                </div>
+                <div class="article" id="p2">
+                    <h2>Project-2</h2>
+                </div>
+                <div class="article" id="p3">
+                    <h2>Project-3</h2>
+                </div>
+            </div>
+        </div>
+        <div id="grid-container">
+            <a name="Technologies"></a>
+            <h1>Technologies Used</h1>
+            <div class="grid">
+                <img src="../Images/html.jpg" alt="">
+                <h3>Introduction to HTML</h3>
+                <p>HTML is the standard markup language for documents designed to be displayed in a web browser. It can
+                    be assisted by technologies such as CSS and JavaScript </p>
+                <a class='button' href="Pratical-5_html.html" target="_blank">Read More</a>
+            </div>
+            <div class="grid">
+                <img src="../Images/css.png" alt="CSS">
+                <h3>Introduction to CSS</h3>
+                <p>Cascading Style Sheets is a style sheet language used for describing the presentation of a document
+                    written in a markup language like Hyper text markup language(HTML)</p>
+                <a class='button' href="Pratical-5_css.html" target="_blank">Read More</a>
+            </div>
+            <div class="grid">
+                <img src="../Images/js.png" alt="JS">
+                <h3>Introduction to Javascript</h3>
+                <p>JavaScript is a cross-platform, object-oriented scripting language used to make webpages interactive
+                    (e.g., having complex animations, clickable buttons, etc).</p>
+                <a class='button' href="Pratical-5_js.html" target="_blank">Read More</a>
+            </div>
+            <div class="grid">
+                <img src="../Images/bootStrap.png" alt="Bootstrap">
+                <h3>Introduction to Bootstrap</h3>
+                <p>Bootstrap is a free and open-source CSS framework directed at responsive, mobile-first front-end web
+                    development. It is the 7th most starred project on GitHub.</p>
+                <a class='button' href="Practical-5_boot.html" target="_blank">Read More</a>
+            </div>
+        </div>
+        <h1>Contact</h1>
+        <div id="footer">
+            <a name="Contact"></a>
+            <p>Website Template For Practical-9 &copy <a href="https://www.beta-labs.in/" target="_blank">Beta-Labs</a>
+            </p>
+            <a href="#top">Back to Top</a>
+            </p>
+        </div>
+    </div>
+</body>
+
+</html>
